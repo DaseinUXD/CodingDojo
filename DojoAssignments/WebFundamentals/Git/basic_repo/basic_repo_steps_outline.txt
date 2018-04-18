@@ -1,0 +1,154 @@
+
+markm@Aletheia MINGW64 ~
+$ cd d:
+
+markm@Aletheia MINGW64 /d
+$ cd DojoAssignments
+
+markm@Aletheia MINGW64 /d/DojoAssignments
+$ ls
+iOS/  MEAN/  netCore/  Python/  Ruby/  WebFundamentals/
+
+markm@Aletheia MINGW64 /d/DojoAssignments
+$ cd Web*
+
+markm@Aletheia MINGW64 /d/DojoAssignments/WebFundamentals
+$ ls
+about.txt  CSS/  Git/  HTML/  Javascript/
+
+markm@Aletheia MINGW64 /d/DojoAssignments/WebFundamentals
+$ cd Git
+
+markm@Aletheia MINGW64 /d/DojoAssignments/WebFundamentals/Git
+$ ls
+GitHubRepoAssignment/
+
+markm@Aletheia MINGW64 /d/DojoAssignments/WebFundamentals/Git
+$ mkdir basic_repo
+
+markm@Aletheia MINGW64 /d/DojoAssignments/WebFundamentals/Git
+$ cd basic_repo
+
+markm@Aletheia MINGW64 /d/DojoAssignments/WebFundamentals/Git/basic_repo
+$ git init
+Initialized empty Git repository in D:/DojoAssignments/WebFundamentals/Git/basic_repo/.git/
+
+markm@Aletheia MINGW64 /d/DojoAssignments/WebFundamentals/Git/basic_repo (master)
+$ touch index.html styles.css script.js
+
+markm@Aletheia MINGW64 /d/DojoAssignments/WebFundamentals/Git/basic_repo (master)
+$ ls
+index.html  script.js  styles.css
+
+markm@Aletheia MINGW64 /d/DojoAssignments/WebFundamentals/Git/basic_repo (master)
+$ git remote add origin https://github.com/markmatthewsphd/basic_repo.git
+
+markm@Aletheia MINGW64 /d/DojoAssignments/WebFundamentals/Git/basic_repo (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        index.html
+        script.js
+        styles.css
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+markm@Aletheia MINGW64 /d/DojoAssignments/WebFundamentals/Git/basic_repo (master)
+$ git push -u origin master\
+> [B
+fatal: remote part of refspec is not a valid name in master[B
+
+markm@Aletheia MINGW64 /d/DojoAssignments/WebFundamentals/Git/basic_repo (master)
+$ git push -u origin master
+error: src refspec master does not match any.
+error: failed to push some refs to 'https://github.com/markmatthewsphd/basic_repo.git'
+
+markm@Aletheia MINGW64 /d/DojoAssignments/WebFundamentals/Git/basic_repo (master)
+$ git push -u origin master
+error: src refspec master does not match any.
+error: failed to push some refs to 'https://github.com/markmatthewsphd/basic_repo.git'
+
+markm@Aletheia MINGW64 /d/DojoAssignments/WebFundamentals/Git/basic_repo (master)
+$ git add .
+
+markm@Aletheia MINGW64 /d/DojoAssignments/WebFundamentals/Git/basic_repo (master)
+$ git commit -m "initial commit of index, styles. and script"
+[master (root-commit) 991cb61] initial commit of index, styles. and script
+ 3 files changed, 19 insertions(+)
+ create mode 100644 index.html
+ create mode 100644 script.js
+ create mode 100644 styles.css
+
+markm@Aletheia MINGW64 /d/DojoAssignments/WebFundamentals/Git/basic_repo (master)
+$ git push -u origin master
+Counting objects: 5, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 534 bytes | 534.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0)
+To https://github.com/markmatthewsphd/basic_repo.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+markm@Aletheia MINGW64 /d/DojoAssignments/WebFundamentals/Git/basic_repo (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   index.html
+        modified:   script.js
+        modified:   styles.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+markm@Aletheia MINGW64 /d/DojoAssignments/WebFundamentals/Git/basic_repo (master)
+$ git add .
+
+markm@Aletheia MINGW64 /d/DojoAssignments/WebFundamentals/Git/basic_repo (master)
+$ git commit -m "added js function to button to display Hello World"
+[master 98ff2d0] added js function to button to display Hello World
+ 3 files changed, 7 insertions(+), 4 deletions(-)
+
+markm@Aletheia MINGW64 /d/DojoAssignments/WebFundamentals/Git/basic_repo (master)
+$ git push -u origin master
+Counting objects: 5, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 655 bytes | 655.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0)
+To https://github.com/markmatthewsphd/basic_repo.git
+   991cb61..98ff2d0  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+markm@Aletheia MINGW64 /d/DojoAssignments/WebFundamentals/Git/basic_repo (master)
+$ git staus
+git: 'staus' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+
+markm@Aletheia MINGW64 /d/DojoAssignments/WebFundamentals/Git/basic_repo (master)
+$ git log
+commit 98ff2d0a746a8e0c8406a8c87714d967b654df74 (HEAD -> master, origin/master)
+Author: Mark Matthews <markmatthewsphd@gmail.com>
+Date:   Tue Apr 17 11:41:57 2018 -0500
+
+    added js function to button to display Hello World
+
+commit 991cb61356debe18104197daf019ebb4de5ee1ac
+Author: Mark Matthews <markmatthewsphd@gmail.com>
+Date:   Tue Apr 17 11:20:20 2018 -0500
+
+    initial commit of index, styles. and script
+
+markm@Aletheia MINGW64 /d/DojoAssignments/WebFundamentals/Git/basic_repo (master)
+$
