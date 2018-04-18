@@ -1,0 +1,37 @@
+win + R type cmd
+
+cd desktop
+
+md test
+
+cd test
+
+copy NUL index.html
+
+copy NUL styles.css
+
+copy NUL commands.txt
+
+copy index.html index_2.html
+
+del styles.css
+
+cd ..
+
+md destination
+
+C:\Users\markm\Desktop>cd test
+
+C:\Users\markm\Desktop\test>move .\index_2.html ..\destination\index_2.html
+
+dir
+
+cd ..
+
+cd destination
+
+dir
+
+C:\Users\markm\Desktop>rd /s destination
+destination, Are you sure (Y/N)? Y
+

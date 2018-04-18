@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Registration Form</title>
+    </head>
+    <body>
+        <form action="process.php" method="post">
+            <p>Please Register</p>
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name">
+
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name">
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+
+            <label for="pw_confirm">Password Confirmation:</label>
+            <input type="password" id="pw_confirm" name="password_confirmation">
+
+            <label for="birthday">Birthday</label>
+            <input type="date" id="birthday" name="birthday">
+
+            <p>Select your gender:</p>
+            <label for="male">Male</label>
+            <input type="radio" id="male" name="gender" value="male">
+
+            <label for="female">Female</label>
+            <input type="radio" id="female" name="gender" value="female">
+
+            <label for="decline">Other</label>
+            <input type="radio" id="decline" name="gender" value="decline">
+
+
+            <p>Say a few words about yourself:</p>
+
+            <textarea name="description" title="Say a Few Words About Yourself"></textarea>
+
+            <p>Select your favorite language:</p>
+            <select name="programing_language">
+                <option value="javascript">JavaScript</option>
+                <option value="html">Hypertext Markup Language</option>
+                <option value="css">Cascading Style Sheets</option>
+            </select>
+            <input type="submit" value="Click to Register">
+        </form>
+
+
+
+    </body>
+</html>

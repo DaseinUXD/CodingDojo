@@ -1,0 +1,18 @@
+D:\DojoAssignments>dir /b /s
+D:\DojoAssignments\iOS
+D:\DojoAssignments\MEAN
+D:\DojoAssignments\netCore
+D:\DojoAssignments\Python
+D:\DojoAssignments\Ruby
+D:\DojoAssignments\WebFundamentals
+D:\DojoAssignments\iOS\about.txt
+D:\DojoAssignments\MEAN\about.txt
+D:\DojoAssignments\netCore\about.txt
+D:\DojoAssignments\Python\about.txt
+D:\DojoAssignments\Ruby\about.txt
+D:\DojoAssignments\WebFundamentals\about.txt
+D:\DojoAssignments\WebFundamentals\CSS
+D:\DojoAssignments\WebFundamentals\Git
+D:\DojoAssignments\WebFundamentals\HTML
+D:\DojoAssignments\WebFundamentals\Javascript
+D:\DojoAssignments\WebFundamentals\HTML\indentation.htmlTRE, 1401 Pacific Ave, Dallas, TX 75202
