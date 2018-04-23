@@ -11,3 +11,5 @@ function rangePrint(x, y, z)
     }
 
 }
+rangePrint(2, 5, 2);
+

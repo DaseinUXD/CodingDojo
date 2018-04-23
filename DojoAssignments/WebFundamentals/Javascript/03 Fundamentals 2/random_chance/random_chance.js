@@ -3,15 +3,17 @@ function randomChance(quarters) {
     {
         var win = 1;
         var chance = (Math.floor(Math.random()*100));
-        var winnings = (Math.floor(Math.random()*100)/2);
+        // console.log(chance === win);
+        var winnings = Math.floor((Math.random()*100)/2);
         if (win === chance) {
             quarters = quarters + winnings;
+            console.log(quarters);
 
         }
-        console.log(quarters);
+
         quarters--;
     }
 
 
 }
-randomChance(100);
+randomChance(1000);
