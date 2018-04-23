@@ -1,0 +1,18 @@
+Overview
+    This chapter, we review basic blocks of programming: conditionals, logic operators, loops and a few techniques.
+    All of the following concepts are used in this chapter:
+
+        Variables
+        Functions
+        for loops
+        while loops
+        Conditional (if/else) statements
+        console.log
+        Parameters
+        Return values
+        Math.random | Math.ceil | Math.floor | Math.trunc
+Review: define variable. Think of it as simply an empty container with a label. Once you put a value into the container,
+you can refer to this value by the label. We put a value into a variable using single-equals (=), which you read as
+"is set to a value of". In other words, var name = "Zaphod" can be read as Variable labeled "name" is set to a value of
+"Zaphod". After this line of code, when you refer to "name", you get a value of "Zaphod". If you are still getting used
+to the idea of variables, don't panic.

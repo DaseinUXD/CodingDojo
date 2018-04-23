@@ -1,0 +1,5 @@
+Overview
+    In this chapter, we explore the array data structure: reading, changing, as well as adding and removing elements
+    (which change the array’s length). Before chapter’s end, we touch upon associative arrays as well. At this point
+     we expect you to quickly complete the 13 mandatory algorithm challenges. Building array-based functions such as
+      min(), max(), sum() and average() should be easy and rapid.
