@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin: 5px auto;
+}
+
+.puzzle {
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    display: block;
+    /*height: 100px;*/
+    width: 300px;
+    margin: 10px auto;
+}
+/*img {*/
+    /*margin: 0 auto;*/
+/*}*/
+#bottom {
+    margin: 0;
+
+}
+#bottom1 {
+    visibility: hidden;
+}
+#bottom2 {
+    visibility: hidden;
+}
+#bottom3 {
+    visibility: hidden;
+}
+#bottom4 {
+    visibility: hidden;
+}
+#bottom5 {
+    visibility: hidden;
+}
+
+#top {
+    margin: 0;
+
+}
+#top1 {
+    visibility: visible;
+}
+#top2 {
+    visibility: visible;
+}
+#top3 {
+    visibility: visible;
+}
+#top4 {
+    visibility: visible;
+}
+#top5 {
+    visibility: visible;
+}
