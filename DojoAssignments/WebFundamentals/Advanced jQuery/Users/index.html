@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users Form Challenge</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div class="column">
+            <table id="table">
+                <caption>User Contact Information</caption>
+                <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email Address</th>
+                    <th>Contact Number</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Clive</td>
+                    <td>Lewis</td>
+                    <td><a href="mailto:jack@inklings.org.uk">jack@inklings.org.uk</a></td>
+                    <td><a href="tel:+44 (0)1223 337733">+44 (0)1223 337733</a></td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="column">
+            <form id="form">
+                <fieldset>
+                    <legend><h1>Add User</h1></legend>
+                    <ul>
+                        <li>
+                            <label for="firstName">First Name:</label>
+                            <input id="firstName" type="text" name="firstName" placeholder="First Name">
+                        </li>
+                        <li>
+                            <label for="lastName">Last Name:</label>
+                            <input id="lastName" type="text" name="lastName" placeholder="Last Name">
+                        </li>
+                        <li>
+                            <label for="email">Email Address:</label>
+                            <input id="email" type="email" name="email" placeholder="yourName@email.com">
+                        </li>
+                        <li>
+                            <label for="phone">Contact Number:</label>
+                            <input id="phone" type="tel" name="phone" placeholder="817-555-1212">
+                        </li>
+
+                    </ul>
+
+                    <input id="submitBtn" type="submit" value="Submit">
+
+                </fieldset>
+            </form>
+        </div>
+
+
+    </div>
+</body>
+</html>
