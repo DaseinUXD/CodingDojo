@@ -1,0 +1,26 @@
+install used pip to install the named package
+
+list first displayed a warning message: "DEPRECATION: The default format will switch to columns in the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) in your pip.conf under the [list] section) to disable this warning.
+"
+printed a list of all python packages installed 
+
+trying to install an already-installed package, saying it already exists,
+
+there was an additional note indicating that pip 9.0.1 is out of date and a version 10.0.1 is available along with instructions on how to install it.
+
+with 'freeze' each package's version number is listed after a double equal sign
+i.e.
+Django==1.11.9
+
+with 'list' the package version number is within parentheses
+i.e.
+Django (1.11.9)
+
+pip freeze > <<filename.txt>> creates a text file and then puts the current list of installed packages and their version numbers into 
+
+uninstall removes Django and its dependencies
+
+show gives detailed information about the Django package
+its name, website, license, etc
+
+the search command gives a list of all of the properties and methods of the package Flask

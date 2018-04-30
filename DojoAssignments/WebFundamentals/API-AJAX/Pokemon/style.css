@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif, Rosario, "Droid Sans", "Lucida Sans"
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif, "Poiret One", "Droid Sans", "Lucida Sans"
+}
+
+#container {
+    text-align: center;
+    width: 1200px;
+    margin: 20px auto;
+}
