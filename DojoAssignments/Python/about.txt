@@ -1,0 +1,6 @@
+The windows installation instrutions were vague, unclear and complicated.  The images in the step-by-step instructions did not accurately depict the process.
+There was no clear transition between using cmd or gitbash, if i did not have extensive previous history with both cmd and linux shells, exp assigning
+enviornmental variables and paths from either windows or command line i don't know how i could have completed it without help
+the is by far the WORST lesson thus far.
+
+-mark matthews (dallas onsite)
