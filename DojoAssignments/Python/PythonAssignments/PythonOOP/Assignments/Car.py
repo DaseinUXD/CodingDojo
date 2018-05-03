@@ -1,11 +1,4 @@
 class Car(object):
-    def display_all(self):
-
-        print "Price: ${} \n".format(self.price), \
-              "Speed: {} mph\n".format(self.speed), \
-              "Fuel: {}\n".format(self.fuel), \
-              "Mileage: {} mpg\n".format(self.mileage), \
-              "Tax: {}%\n".format(self.tax)
 
     def __init__(self, price, speed, fuel, mileage):
         self.price = price
@@ -20,6 +13,13 @@ class Car(object):
         self.tax = int(self.tax*100)
         self.display_all()
 
+    def display_all(self):
+
+        print "Price: ${} \n".format(self.price), \
+            "Speed: {} mph\n".format(self.speed), \
+            "Fuel: {}\n".format(self.fuel), \
+            "Mileage: {} mpg\n".format(self.mileage), \
+            "Tax: {}%\n".format(self.tax)
 
     # def display_all(self):
     #     print "hello"
