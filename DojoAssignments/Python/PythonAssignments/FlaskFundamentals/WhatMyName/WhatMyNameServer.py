@@ -12,6 +12,7 @@ def index():
 def process():
     # print 'got post'
     name = request.form['name']
+    print name
     # name = request.form['name']
 
     return redirect('/')

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dojo Survey Index</title>
+</head>
+<body>
+<form id="survey_form" action="result.html" method="POST">
+    <fieldset title="Dojo Survey">
+
+            <label for="name">Your Name:</label>
+            <input id="name" type="text" name="name" placeholder="Enter name">
+
+            <label for="location">Dojo Location:</label>
+
+
+            <select id="location" name="dojoLocation" form="survey_form">
+                <option value="dallas">Dallas</option>
+                <option value="chicago">Chicago</option>
+                <option value="fullerton">Fullerton</option>
+                <option value="nyc">New York City</option>
+
+            </select>
+            <input type="submit">
+
+    </fieldset>
+</form>
+</body>
+</html>
