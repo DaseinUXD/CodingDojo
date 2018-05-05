@@ -1,36 +1,27 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, request, session
 
 app = Flask(__name__)
+app.secret_key = "this is my secret pass key"
 
 
 @app.route('/')
 def index():
     return render_template("index.html")
 
-@app.route('/ninja')
-def ninja():
-    return render_template("ninja.html")
 
-@app.route('/blue')
-def blue():
-    return render_template("blue.html")
+@app.route('/all_four', methods=['POST'])
+def all_four():
+    return render_template("ninjas.html")
 
-@app.route('/orange')
-def orange():
-    return render_template("orange.html")
 
-@app.route('/red')
-def red():
-    return render_template("red.html")
+@app.route('/choice', methods=['POST'])
+def choice():
+    session['color'] = request.form['color']
 
-@app.route('/purple')
-def purple():
-    return render_template("purple.html")
+    print "This is the Session Color: " + session['color']
+    ninja_color = session['color']
 
-@app.route('/error')
-def error():
-    return render_template("error.html")
-
+    return render_template(ninja_color + ".html")
 
 
 if __name__ == '__main__':

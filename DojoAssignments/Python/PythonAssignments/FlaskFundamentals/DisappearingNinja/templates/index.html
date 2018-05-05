@@ -3,18 +3,33 @@
 <head>
 
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.js"></script>
     <title>Ninja Landing Page</title>
-    <link rel="stylesheet" href="/static/css/bootstrap.css"
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
-    <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+
 
 </head>
 <body>
-<div class="container-fluid">
+<div class="container">
     <div class="row">
+        <div class="col-3"></div>
         <div class="col-6 mx-auto">
-            <h1 class="border-dark">No ninjas here</h1>
+            <h1 class="h1">No ninjas here</h1>
         </div>
+        <div class="col-3"></div>
+    </div>
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6 mx-auto">
+
+            <form action="/all_four" method="POST" class="form-group">
+                <input id="submit" type="submit" name="submit" class="btn btn-outline-secondary"
+                       value="Click to find some...">
+            </form>
+        </div>
+        <div class="col-3"></div>
     </div>
 
 </div>
