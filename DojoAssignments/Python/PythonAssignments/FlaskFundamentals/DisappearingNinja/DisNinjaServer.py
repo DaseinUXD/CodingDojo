@@ -14,14 +14,14 @@ def all_four():
     return render_template("ninjas.html")
 
 
-@app.route('/choice', methods=['POST'])
-def choice():
+@app.route('/ninja', methods=['POST'])
+def ninja():
     session['color'] = request.form['color']
 
     print "This is the Session Color: " + session['color']
     ninja_color = session['color']
 
-    return render_template(ninja_color + ".html")
+    return render_template("/"+ninja_color + ".html")
 
 
 if __name__ == '__main__':
