@@ -20,10 +20,10 @@ b = multiply(a, 5)
 print b
 
 
-list2 = multiply([2, 4 , 5], 3)
-print list2
+# list2 = multiply([2, 4 , 5], 3)
+# print list2
 
-def layered_multiples(list2):
+def layered_multiples():
     list3 =[]
 
     for i in len(list2[0][0]):
