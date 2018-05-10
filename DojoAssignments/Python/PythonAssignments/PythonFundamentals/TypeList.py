@@ -1,3 +1,4 @@
+
 # Assignment: Type List
 # Write a program that takes a list and prints a message for each element in the list,
 # based on that element's data type.   Your program input will always be a list. For each item in the list, test
