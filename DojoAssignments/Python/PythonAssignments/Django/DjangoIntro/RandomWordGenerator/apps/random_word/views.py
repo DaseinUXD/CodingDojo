@@ -10,10 +10,11 @@ from .classes import attemptCounter
 
 def index(request):
     count = attemptCounter(1)
-    cycle =count.increment()
+    request.count = count.increment()
+
 
     context = {
-        "attemptNumber": cycle,
+        "attemptNumber": request.count,
 
         "randomWord": get_random_string(14)
     }
