@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+            integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+            integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+            crossorigin="anonymous"></script>
+    <title>Ninja Money</title>
+</head>
+<body>
+<div class="container">
+    <div class="navbar"></div>
+    {#    Top Row#}
+    <div class="row">
+        <form>
+            <div class="form-group form-row">
+
+                <label for="gold" class="col-5 col-form-label">Your Gold:</label>
+                <div class="col-5">
+
+                    <input readonly id="gold" type="text" class="form-control" value="{{ session.gold }}">
+                </div>
+            </div>
+        </form>
+    </div>
+    {#    Middle Row#}
+    <div class="row">
+        <div class="card-deck text-nowrap">
+{#            farm card#}
+            <div class="card col=3">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Farm</h5>
+                    <p class="card-text text-center">earn 10-20</p>
+                    <p class="card-text text-center">gold</p>
+                </div>
+                <div class="card-footer text-center">
+                    <form action="/process_money" method="post">
+                        <input type="hidden" name="farm" value="farm">
+                        <input type="submit" class="btn btn-outline-primary" value="Find Gold!">
+                    </form>
+                </div>
+            </div>
+{#            cave card#}
+            <div class="card col-3">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Cave</h5>
+                    <p class="card-text text-center">earn 5-10</p>
+                    <p class="card-text text-center">gold</p>
+                </div>
+                <div class="card-footer text-center">
+                    <form action="/process_money" method="post">
+                        <input type="hidden" name="cave" value="cave">
+                        <input type="submit" class="btn btn-outline-primary" value="Find Gold!">
+                    </form>
+                </div>
+            </div>
+{#            house card#}
+            <div class="card col-3">
+                <div class="card-body">
+                    <h5 class="card-title text-center">House</h5>
+                    <p class="card-text text-center">earn 2-5</p>
+                    <p class="card-text text-center">gold</p>
+                </div>
+                <div class="card-footer text-center">
+                    <form action="/process_money" method="post">
+                        <input type="hidden" name="house" value="house">
+                        <input type="submit" class="btn btn-outline-primary" value="Find Gold!">
+                    </form>
+                </div>
+            </div>
+            <div class="card col-3">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Casino</h5>
+                    <p class="card-text text-center">earn/lose 0-50</p>
+                    <p class="card-text text-center">gold</p>
+                </div>
+{#                cave card#}
+                <div class="card-footer text-center">
+                    <form action="/process_money" method="post">
+                        <input type="hidden" name="casino" value="casino">
+                        <input type="submit" class="btn btn-outline-primary" value="Find Gold!">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row"></div>
+    </div>
+</div>
+</body>
+</html>
