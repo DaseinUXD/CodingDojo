@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- unrequired meta tags -->
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+            integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+            integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+            crossorigin="anonymous"></script>
+    <title>Registration Form</title>
+</head>
+<body>
+<div class="container">
+{#        <header>#}
+{#            <ul class="nav justify-content-end">#}
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link active" href="#">Active</a>#}
+{#                </li>#}
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link" href="#">Link</a>#}
+{#                </li>#}
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link" href="#">Link</a>#}
+{#                </li>#}
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link disabled" href="#">Disabled</a>#}
+{#                </li>#}
+{#            </ul>#}
+{#        </header>#}
+    <div class="container">
+        <h1>Welcome!</h1>
+        <div class="row">
+            {#            Register side#}
+            <div class="col-8">
+                <div class="card">
+                    <h2 class="card-header">Registration</h2>
+                    <div class="card-body">
+                        <h5 class="card-title small text-muted">Please complete all sections.</h5>
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <h6>{{ message }}</h6>
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+                        {#                        BEGIN Registration FORM #}
+                        <form action="/submit" method="post">
+                            
+
+                            <div class="form-group row">
+                                <label for="first_name" class="col-4 col-form-label">First Name:</label>
+                                <div class="col-8">
+                                    <input id="first_name" name="first_name" class="form-control" type="text" unrequired>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="last_name" class="col-4 col-form-label">Last Name:</label>
+                                <div class="col-8">
+                                    <input id="last_name" name="last_name" class="form-control" type="text" unrequired>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="registration-email" class="col-4 col-form-label">Email:</label>
+                                <div class="col-8">
+                                    <input id="registration-email" name="email" class="form-control" type="email" unrequired>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="reg_password" class="col-4 col-form-label">Password:</label>
+                                <div class="col-8">
+                                    <input id="reg_password" name="reg_pwd" class="form-control" type="password" unrequired>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="conf_password" class="col-4 col-form-label">Confirm Password:</label>
+                                <div class="col-8">
+                                    <input id="conf_password" name="conf_pwd" class="form-control" type="password" unrequired>
+                                </div>
+                            </div>
+{#                            <div class="form-group row">#}
+{#                                <label for="dob" class="col-4 col-form-label">Date of Birth:</label>#}
+{#                                <div class="col-8">#}
+{#                                    <input id="dob" class="form-control" type="date" unrequired>#}
+{#                                </div>#}
+{#                            </div>#}
+                            <div class="row">
+                                <div class="col-9"></div>
+                                <div class="col-3">
+                                    <input class="btn btn-success" type="submit" value="Register">
+                                </div>
+                            </div>
+
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
