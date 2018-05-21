@@ -48,7 +48,7 @@
                 </div>
                 <div class="card-footer text-center">
                     <form action="/process_money" method="post">
-                        <input type="hidden" name="farm" value="farm">
+                        <input type="hidden" name="location" value="farm">
                         <input type="submit" class="btn btn-outline-primary" value="Find Gold!">
                     </form>
                 </div>
@@ -62,7 +62,7 @@
                 </div>
                 <div class="card-footer text-center">
                     <form action="/process_money" method="post">
-                        <input type="hidden" name="cave" value="cave">
+                        <input type="hidden" name="location" value="cave">
                         <input type="submit" class="btn btn-outline-primary" value="Find Gold!">
                     </form>
                 </div>
@@ -76,7 +76,7 @@
                 </div>
                 <div class="card-footer text-center">
                     <form action="/process_money" method="post">
-                        <input type="hidden" name="house" value="house">
+                        <input type="hidden" name="location" value="house">
                         <input type="submit" class="btn btn-outline-primary" value="Find Gold!">
                     </form>
                 </div>
@@ -90,13 +90,24 @@
 {#                cave card#}
                 <div class="card-footer text-center">
                     <form action="/process_money" method="post">
-                        <input type="hidden" name="casino" value="casino">
+                        <input type="hidden" name="location" value="casino">
                         <input type="submit" class="btn btn-outline-primary" value="Find Gold!">
                     </form>
                 </div>
             </div>
         </div>
-        <div class="row"></div>
+    </div>
+{#        <div class="row">#}
+            <form action="/process_money" method="post">
+                <div class="form-group form-row">
+                    <label for="activities" class="col-1 col-form-label">Activities:</label>
+                    <div class="col-6">
+
+                        <textarea readonly id="activities" class="form-control">{{ session.gold }}</textarea>
+                    </div>
+                </div>
+            </form>
+{#        </div>#}
     </div>
 </div>
 </body>

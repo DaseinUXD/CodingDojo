@@ -6,7 +6,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../../static/crud_app/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -18,10 +18,30 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
             integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
             crossorigin="anonymous"></script>
-    <title>Hello, world!</title>
+    <title>Advanced Validation Example</title>
 </head>
 <body>
-<h1>Hello, world!</h1>
+<h1>Enter a Valid (Any) Email!</h1>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+      {% for message in messages %}
+          <p>{{ message }}</p>
+
+      {% endfor %}
+
+
+  {% endif %}
+
+{% endwith %}
+<form action="/process" method="post">
+    <div class="form-group form-row">
+        <label for=email" class="col-1 col-form-label">Email:</label>
+        <div class="col-6">
+            <input id="email" class="form-control" name="email" type="text">
+        </div>
+        <input class="btn btn-primary" type="submit" value="Submit">
+    </div>
+</form>
 
 </body>
 </html>

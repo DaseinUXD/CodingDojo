@@ -11,33 +11,35 @@ def index():
 
 @app.route('/process_money', methods=['POST', 'GET'])
 def process_money():
-        if request.form['farm'] == 'farm':
-            print('this is the farm input')
-            session.farmGold = random.randrange(10,21)
-            print(request.form['farm'])
-            app.gold = app.gold + session.farmGold
-            return redirect('/')
+    if request.form['location'] == 'farm':
+        print('this is the farm input')
+        session.farmGold = random.randrange(10,21)
+        print(request.form['location'])
+        app.gold = app.gold + session.farmGold
+        # return redirect('/')
 
-        if request.form['cave'] == 'cave':
-            print('this is the cave input')
-            session.caveGold = random.randrange(5,11)
-            print(request.form['cave'])
-            app.gold = app.gold + session.caveGold
-            return redirect('/')
-    #
-    # if request.form['house'] == 'house':
-    #     print('this is the house input')
-    #     houseGold = random.randrange(2,6)
-    #     print(request.form['house'])
-    #     app.gold = app.gold + houseGold
-    #
-    # if request.form['cave'] == 'cave':
-    #     print('this is the cave input')
-    #     caveGold = random.randrange(-50,51)
-    #     print(request.form['cave'])
-    #     app.gold = app.gold + caveGold
+    if request.form['location'] == 'cave':
+        print('this is the cave input')
+        session.caveGold = random.randrange(5,11)
+        print(request.form['location'])
+        app.gold = app.gold + session.caveGold
+        # return redirect('/')
 
-    # return redirect('/')
+    if request.form['location'] == 'house':
+        print('this is the house input')
+        session.houseGold = random.randrange(2,6)
+        print(request.form['location'])
+        app.gold = app.gold + session.houseGold
+        # return redirect('/')
+
+    if request.form['location'] == 'casino':
+        print('this is the cave input')
+        session.casinoGold = random.randrange(-50,51)
+        print(request.form['location'])
+        app.gold = app.gold + session.casinoGold
+        # return redirect('/')
+    return redirect('/')
+
 
 if __name__ == '__main__':
     app.run()
