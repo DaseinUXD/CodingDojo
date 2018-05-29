@@ -36,18 +36,18 @@ class Product(object):
 
     def display_info(self):
         if self.totalPrice == None:
-            print "Item Name: {} \n".format(self.item_name), \
+            print( "Item Name: {} \n".format(self.item_name), \
                 "Price: ${} \n".format(self.price), \
                 "Weight: {} lbs \n".format(self.weight), \
                 "Brand: {} \n".format(self.brand), \
-                "Status: {} \n".format(self.status)
+                "Status: {} \n".format(self.status))
         else:
-            print "Item Name: {} \n".format(self.item_name), \
+            print( "Item Name: {} \n".format(self.item_name), \
                 "Price: ${} \n".format(self.price), \
                 "Price with tax: ${} \n".format(self.totalPrice), \
                 "Weight: {} lbs \n".format(self.weight), \
                 "Brand: {} \n".format(self.brand), \
-            "Status: {} \n".format(self.status)
+            "Status: {} \n".format(self.status))
 
 
 tv = Product(200, "television", 50, "Samsung")

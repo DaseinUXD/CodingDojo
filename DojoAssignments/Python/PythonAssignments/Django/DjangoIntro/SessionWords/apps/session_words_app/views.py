@@ -10,7 +10,12 @@ def index(request):
     return render(request, 'session_words_app/index.html')
 
 def add(request):
-    return redirect('/')
+    if request.method=="POST":
+
+        return redirect('/')
+    else:
+        # do something else
+        return redirect('/')
 
 def clear(request):
     return redirect('/')
