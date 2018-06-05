@@ -1,5 +1,5 @@
-#Assignment: Practice your pip in your virtual environment
-##Objectives
+# Assignment: Practice your pip in your virtual environment
+## Objectives
 1. Get accustomed to using commands required to use pip modules.
 2. Practice using a virtual environment
 
@@ -7,9 +7,9 @@ Run these commands in the order instructed. Your assignment submission should be
 
 Reminder: when your virtualenv is activated, you may use the pip command. If not, use pip3.
 
-##Run the following commands:  
+## Run the following commands:  
 
-#####Note: I used a virtual envionment for the first set of commands
+##### Note: I used a virtual envionment for the first set of commands
 
 `pip install Django==1.11.9`  
 
@@ -113,7 +113,9 @@ flask-ypaginate (0.1.3)     - Pagination for Flask
 sockjs-flask (0.3)          - SockJs for Flask  
 airbrake-flask (1.0.7)      - airbrake-flask - Airbrake client for Python Flask  
 Flask-Diced (0.3)           - Flask-Diced - CRUD views generator for Flask  
+Flask-GeoIP (0.1.3          - Flask-GeoIP
 Flask-GeoIP (0.1.3)         - Flask-GeoIP  
+
 -------------
 
 Simple Flask extension for pygeoip.  
@@ -187,32 +189,32 @@ markm@Aletheia MINGW64 ~/Desktop
 $
 
 
-#Research Findings/Results
-##pip
-###Reference Guide
+# Research Findings/Results
+## pip
+### Reference Guide
 * [For extensive information on pip](https://pip.pypa.io/en/stable/reference/pip/)
-###Basic Information
+### Basic Information
 * pip is already installed for Python 2 >= 2.7.9 or Python 3 > 3.4 downloaded from [python.org](https://www.python.org "python.org")
 * pip is a command line program. When you install pip, a pip command is added to your system, which can be run from the command prompt as follows:  
 `$ pip <pip arguments>`
-###Installing Packages
+### Installing Packages
 The most common scenario is to install from PyPI using Requirement Specifiers
 
     $ pip install SomePackage            # latest version  
     $ pip install SomePackage==1.0.4     # specific version  
     $ pip install 'SomePackage>=1.0.4'     # minimum version  
-###Requirement Files
+### Requirement Files
 "Requirement Files" are files containing a list of items to be installed using p0ip0 install like so:  
 
     $ pip install -r requirements.txt
-###pip list
-####Usage
+### pip list
+#### Usage
 `pip [options]`
-####Description
+#### Description
 List installs packages, including editables.
 
 Packages are listed in a case-insensitive sorted order.
-####Options
+#### Options
 
 * __-o, --outdated__  
 List outdated packages
@@ -265,48 +267,46 @@ Deactivates an active virtual environment
 ###pip freeze
 *  Output installed packages in requirements format.
 *  Suitable for generating a requirements file  
-####Example  
+#### Example  
 `pip freeze > requirements.txt`
 
 ###pip uninstall
-####Usage  
+#### Usage  
 `pip [options] <package>...`  
 `pip [options] -r <requirements file>...`
-####Description
+#### Description
 Uninstall packages.  
 pip is able to uninstall most installed packages. Known exceptions are:
 * Pure distutils packages installed with `python setup.py install`, which leave behind no metadata to determine what files were installed.
 * Script wrappers installed by `python setup.py develop`.
-####Options
+#### Options
 **-r, --requirement** `<file>`
 
 * Uninstall all the packages listed in the given requirements file.  This option can be used multiple times.
 
 **-y, --yes**
 * Don't ask for confirmation of uninstall deletions.
-####Example
+#### Example
 * <a href="#Uninstall">See usage above.</a>  
 
 ### pip show
-####Usage
+#### Usage
 `pip [options] <package>`  
-#####Description
+##### Description
 * Show information about one or more installed packages
-####Options
+#### Options
 *  **-f, --files**
 *  **--verbose**
 
-###pip search
-####Usage
+### pip search
+#### Usage
 `pip [options] <querry>`
 ####Description
 Search for PyPI packages whose name or summary contains `<query>`.
 
-####Options
+#### Options
 **-i, --index `<url>`**
 * Base URL of Python Package Index (default https://pypi.org/pypi).
 
-####Examples
+#### Examples
 * <a href="#Search">See usage above.</a>  
-
-
