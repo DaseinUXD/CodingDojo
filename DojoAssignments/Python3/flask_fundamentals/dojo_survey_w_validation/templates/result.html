@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.js"></script>
+    <title>Dojo Survey Results</title>
+</head>
+<body>
+<div class="container">
+    <div class="navbar"></div>
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="border-bottom border-dark">
+            <h2>Dojo Survey Results</h2>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-2">
+
+
+            <p><span>Name: </span></p>
+
+            <p><span>Dojo Location: </span></p>
+
+            <p><span>Favorite Language: </span></p>
+
+            <p><span>Comments: </span></p>
+
+            <form action="/" method="GET">
+
+                <input type="submit" id="go_back" name="go_back" value="Go Back" class="btn btn-outline-secondary"></input>
+            </form>
+
+        </div>
+        <div class="col-2">
+            <p>{{ session['name'] }}</p>
+            <p>{{ session['location'] }}</p>
+            <p>{{ session['language'] }}</p>
+            <p>{{ session['comment'] }}</p>
+
+        </div>
+        <div class="col-5"></div>
+    </div>
+</div>
+
+</body>
+</html>
