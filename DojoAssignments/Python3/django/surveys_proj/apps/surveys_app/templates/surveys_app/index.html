@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../static/surveys_app/css/bootstrap.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+            integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+            integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+            crossorigin="anonymous"></script>
+    <title>Survey Form</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="card border-secondary mb-3 rounded" style="max-width: 25rem;">
+                <div class="card-header"><h1>Dojo Survey Form</h1></div>
+                <div class="card-body text-secondary">
+                    <h5 class="card-title ">Please complete and submit.</h5>
+                    <form action="/submission/" method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label for="name">Your Name:</label>
+                                </div>
+                                <div class="col-6">
+                                    <input id="name" name="name" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label for="location">Dojo Location:</label>
+                                </div>
+                                <div class="col-6">
+                                    <select name="city"  id="location">
+                                        <option value="">Choose...</option>
+                                        <optgroup label="Central">
+                                            <option name="city" value="Chicago">Chicago</option>
+                                            <option name="city" value="Tulsa">Tulsa</option>
+                                            <option name="city" value="Dallas">Dallas</option>
+                                            <option name="city" value="Kansas City">Kansas City</option>
+          4                                  <option name="city" value="St Louis">St Louis</option>
+                                        </optgroup>
+                                        <optgroup label="West">
+                                            <option name="city" value="Mountain View">Mountain View</option>
+                                            <option name="city" value="Seattle">Seattle</option>
+                                            <option name="city" value="San Francisco">San Francisco</option>
+                                            <option name="city" value="Los Angeles">Los Angeles</option>
+                                            <option name="city" value="San Diego">San Diego</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label for="language">Favorite Language:</label>
+                                </div>
+                                <div class="col-6">
+                                    <select name="lang" id="language">
+                                        <option name="lang" value="">Choose...</option>
+                                        <option name="lang" value="JavaScript">JavaScript</option>
+                                        <option name="lang" value="Python">Python</option>
+                                        <option name="lang" value="Ruby">Ruby</option>
+                                        <option name="lang" value="php">php</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <p>Comment (optional):</p>
+                            <textarea class="rounded" name="comments" id="comments" rows="4" cols="45"></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col-8">
+                                <input hidden type="number" name="count" value="1">
+                            </div>
+                            <div class="col-4">
+                                <input class="btn btn-outline-primary" type="submit" value="Submit">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>
+
+
+</body>
+</html>
