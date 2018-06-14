@@ -27,7 +27,7 @@
             <div class="row">
                 <div class="card">
                     <div class="col-12 p-3 mb-2 bg-info text-white card-header">
-{#                        <h5>Thanks for submitting this form! You have submitted this form {{ request.session.count }} times now.</h5>#}
+                        <h5>Thanks for submitting this form! You have submitted this form {{ count }} times now.</h5>
                     </div>
                 </div>
             </div>
@@ -41,25 +41,25 @@
                         <div class="row">
                             <div class="col-1"></div>
                             <div class="text-right col-5">Name:</div>
-{#                            <div class="col-4">{{ request.session.name }}</div>#}
+                            <div class="col-4">{{ name }}</div>
                             <div class="col-2"></div>
                         </div>
                         <div class="row">
                             <div class="col-1"></div>
                             <div class="text-right col-5">Dojo Location:</div>
-{#                            <div class="col-4">{{ request.session.city }}</div>#}
+                            <div class="col-4">{{ city }}</div>
                             <div class="col-2"></div>
                         </div>
                         <div class="row">
                             <div class="col-1"></div>
                             <div class="text-right col-5">Favorite Language:</div>
-{#                            <div class="col-4">{{ request.session.lang }}</div>#}
+                            <div class="col-4">{{ lang }}</div>
                             <div class="col-2"></div>
                         </div>
                         <div class="row">
                             <div class="col-1"></div>
                             <div class="text-right col-5">Comment:</div>
-{#                            <div class="col-4">{{ request.session.comments }}</div>#}
+                            <div class="col-4">{{ comments }}</div>
                             <div class="col-2"></div>
                         </div>
                         <div class="row">

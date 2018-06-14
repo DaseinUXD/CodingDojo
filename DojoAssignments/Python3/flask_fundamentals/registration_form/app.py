@@ -1,26 +1,30 @@
 from flask import Flask, redirect, request, render_template, session, flash
 import datetime
 import re
+
+P = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
+
 app = Flask(__name__)
-app.secret_key='this is my secret, what is yours?'
-EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
+app.secret_key = 'this is my secret, what is yours?'
+EMAIL_REGEX = P
 PASS_CAP = re.compile(r'[A-Z]{1}')
 PASS_NUM = re.compile(r'\d')
 
-
 now = datetime.date.today()
+
 
 @app.route('/')
 def index():
     print(type(now))
     return render_template('index.html')
 
+
 @app.route('/validate', methods=['POST'])
 def validate():
     # First Name
     if len(request.form['first_name']) == 0:
         flash('First name cannot be blank')
-    elif request.form['first_name'].isalpha()==False:
+    elif request.form['first_name'].isalpha() == False:
         flash('First name may contain only letters, no numbers')
     # Last Name
     if len(request.form['last_name']) == 0:
@@ -59,5 +63,7 @@ def validate():
     session['confirm'] = request.form['confirm']
     return redirect('/')
 
+
 if __name__ == '__main__':
     app.run()
+#
