@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="../static/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+            integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+            integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+            crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+        })
+    </script>
+    <title>Login & Registration</title>
+</head>
+<body>
+<div class="container">
+    <div class="row"></div>
+    <div class="row">
+        <div class="col-6">
+            <h3>Registration</h3>
+            <form action="/register" method="post" class="form">
+                {#First Name #}
+                <div class="form-group form-row">
+                    <label for="first_name" class="col-form-label">First Name:</label>
+                    <input id="first_name" type="text" name="first_name" class="form-control"
+                           value="{{ session['first_name'] }}">
+
+                </div>
+                {%- with messages = get_flashed_messages(with_categories=True, category_filter=['first_name']) %}
+                    {%- if messages %}
+                        {%- for category, message in messages %}
+                            <div class="alert alert-danger">
+
+                                <button type="button" class="close" data-dismiss="alert">
+                                    <i class="far fa-window-close fa-sm"></i>
+                                </button>
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                {#Last Name#}
+                <div class="form-group form-row">
+                    <label for="last_name" class="col-form-label">Last Name:</label>
+                    <input id="last_name" type="text" name="last_name" class="form-control"
+                           value="{{ session['last_name'] }}">
+
+                </div>
+                {% with messages = get_flashed_messages(with_categories=True, category_filter=['last_name']) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-danger">
+                                <button type="button" class="close" data-dismiss="alert"><i
+                                        class="far fa-window-close fa-sm"></i></button>
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                {#Email #}
+                <div class="form-group form-row">
+                    <label for="email" class="col-form-label">Email :</label>
+                    <input id="email" type="text" name="email" class="form-control" value="{{ session['email'] }}">
+                </div>
+                {%- with messages = get_flashed_messages(with_categories=True, category_filter=['email']) %}
+                    {%- if messages %}
+                        {%- for category, message in messages %}
+                            <div class="alert alert-danger">
+
+                                <button type="button" class="close" data-dismiss="alert">
+                                    <i class="far fa-window-close fa-sm"></i>
+                                </button>
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                {#Password#}
+                <div class="form-group form-row">
+                    <label for="password" class="col-form-label">Password :</label>
+                    <input id="password" type="text" name="password" class="form-control" tabindex="0"
+                           data-container="body"
+                           data-toggle="popover" data-trigger="focus" data-placement="right"
+                           data-content="Passwords must contain a minimum 8 characters, with at least 1 Uppercase letter, 1 lowercase letter, 1 number, and 1 special character">
+                </div>
+                {%- with messages = get_flashed_messages(with_categories=True, category_filter=['password']) %}
+                    {%- if messages %}
+                        {%- for category, message in messages %}
+                            <div class="alert alert-danger">
+
+                                <button type="button" class="close" data-dismiss="alert">
+                                    <i class="far fa-window-close fa-sm"></i>
+                                </button>
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+
+                <div class="form-group form-row">
+                    <label for="password_confirm" class="col-form-label">Password Confirmation:</label>
+                    <input id="password_confirm" type="text" name="password_confirm" class="form-control">
+                </div>
+                {%- with messages = get_flashed_messages(with_categories=True, category_filter=['password_confirm']) %}
+                    {%- if messages %}
+                        {%- for category, message in messages %}
+                            <div class="alert alert-danger">
+
+                                <button type="button" class="close" data-dismiss="alert">
+                                    <i class="far fa-window-close fa-sm"></i>
+                                </button>
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+
+                <div class="form-group form-row">
+                    <input type="submit" class="btn btn-primary" name="submit">
+                </div>
+            </form>
+        </div>
+        <div class="col-6">
+            <h3>Login</h3>
+            <form action="/login" method="post" class="form">
+                <div class="form-group form-row">
+                    <label for="email" class="col-form-label">Email :</label>
+                    <input id="email" type="email" name="login_email" class="form-control">
+                </div>
+                {%- with messages = get_flashed_messages(with_categories=True, category_filter=['email']) %}
+                    {%- if messages %}
+                        {%- for category, message in messages %}
+                            <div class="alert alert-danger">
+
+                                <button type="button" class="close" data-dismiss="alert">
+                                    <i class="far fa-window-close fa-sm"></i>
+                                </button>
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+
+                <div class="form-group form-row">
+                    <label for="password" class="col-form-label">Password :</label>
+                    <input id="password" type="password" name="login_password" class="form-control">
+                </div>
+                <div class="form-group form-row">
+                    <input type="submit" class="btn btn-primary" name="submit">
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+    <div class="row"></div>
+</div>
+</body>
+</html>

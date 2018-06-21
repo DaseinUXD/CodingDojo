@@ -3,12 +3,15 @@ from time import gmtime, time, strftime, localtime
 from datetime import date, datetime
 import json
 from decimal import Decimal
+
 now = datetime.now()
+
+
 # Create your views here.
 # Index / root
 def index(request):
     print(request.method)
-    if request.method=='GET':
+    if request.method == 'GET':
         session_on = (request.session.get('session_on'))
         new_word = (request.session.get('new_word'))
         color_choice = (request.session.get('color_choice'))
@@ -17,19 +20,26 @@ def index(request):
         date = (request.session.get('date'))
     else:
         return False
+
     context = {
-        'session_on':session_on,
-        'new_word':new_word,
-        'color_choice':color_choice,
-        'font_size':font_size,
-        'time':time,
-        'date':date,
+        'session_on': session_on,
+        'new_word': new_word,
+        'color_choice': color_choice,
+        'font_size': font_size,
+        'time': time,
+        'date': date,
     }
+    context_list = list(context)
+    print(context_list[0])
+
+    temp_list = context_list
+    temp_list.append({"new_word": "new_word", "color_choice": "color_choice", "font_size": "font_size"})
+
+    print(temp_list)
     print(session_on, new_word, color_choice, font_size, time, date)
 
-
-
     return render(request, 'session_words_app/index.html', context)
+
 
 #  add a word with certain settings
 def add_word(request):
@@ -41,13 +51,12 @@ def add_word(request):
         print(request.session)
         print("+" * 80)
 
-
         if request.POST.get('font_size') == None:
-            request.session['font_size'] = 6
+            request.session['font_size'] = 6  # setting h to level 6
         # elif request.POST.get('font_size') == 1:
         #     request.session['font_size'] = 1
         else:
-            request.session['font_size'] = 1
+            request.session['font_size'] = 1  # setting h to level 1
 
         request.session['new_word'] = request.POST['new_word']
         request.session['color_choice'] = request.POST['color_choice']
@@ -71,18 +80,31 @@ def add_word(request):
             date = third
         else:
             date = n_th
-        request.session['date'] =date
+        request.session['date'] = date
         request.session['time'] = strftime('%I:%M:%S %p %Z', localtime()).lstrip('0').replace(' 0', ' ')
 
+        # page datum points
+        new_word = request.session['new_word']
+        color_choice = request.session['color_choice']
+        font_size = request.session['font_size']
+
         page_data = {
-            'new_word': request.session['new_word'],
-            'color_choice': request.session['color_choice'],
-            'font_size': request.session['font_size'],
+            'new_word': new_word,
+            'color_choice': color_choice,
+            'font_size': font_size,
             "time": time,
             "date": date,
         }
 
+        # request.session['words'] = list(page_data)
 
+        temp_list = request.session['words']
+        temp_list.append([new_word, color_choice, font_size])
+
+        request.session['words'] = temp_list
+
+        print(temp_list)
+        print(request.session['words'])
 
 
 
@@ -93,5 +115,7 @@ def add_word(request):
 
 
 def clear(request):
+    request.session.flush()
     response = "clear"
+
     return HttpResponse(response)

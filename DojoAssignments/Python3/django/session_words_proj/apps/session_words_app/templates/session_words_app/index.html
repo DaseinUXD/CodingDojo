@@ -77,15 +77,16 @@
                     <label class="form-check-label" for="big_font">Show in BIG fonts!</label>
                 </div>
 
-                <input type="submit" class="btn btn-outline-info" value="Add to Session">
+                <input type="submit" class="btn btn-primary" value="Add to Session" name="submit">
             </form>
         </div>
         <div class="col-auto mr-auto border-right"></div>
         <div class="col-6">
             <form action="/session_words/clear" method="get">
                 {% csrf_token %}
-                <input type="submit" name="submit" value="Clear Session" class="btn btn-outline-warning">
+                <input type="submit" name="submit" value="Clear Session" class="btn btn-warning">
             </form>
+        <h1>{{ word_list }}</h1>
             {% if session_on == True %}
                 <h1> Happy </h1>
                 <ul>
