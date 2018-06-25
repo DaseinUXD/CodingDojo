@@ -34,17 +34,48 @@
             </nav>
         </div>
         {#Forms#}
-        <h4>Welcome, Alias</h4>
+        <h3>Welcome, {{ name }}</h3>
         <div class="row">
             <div class="col-6">
-                <h6>Recent Book Reviews:</h6>
+                <h4>Recent Book Reviews:</h4>
+                <div class="col-l"></div>
+                <div class="col-11">
+                    {% for review in reviews %}
+                        <h6>
+                            <a href="/books/{{ review.book.id }}">
+                                {{ review.book.title }}
+                            </a>
+
+                        </h6>
+                        <div class="col-11">
+                            <p class="mb-0">
+                                Rating: {{ review.rating }}
+                            </p>
+                            <p class="mb-0">
+                                <a href="/users/{{ review.reviewer.id }}">
+                                {{ review.reviewer.alias }}
+                                </a> says: {{ review.content }}
+                            </p>
+                            <p class="mb-0">Posted on {{ review.created_at }}</p>
+
+                        </div>
+                    {% endfor %}
+
+
+                </div>
+
                 {#Cycle through reviews to priint them using a for loop#}
 
             </div>
             <div class="col-6">
                 <div class="form-group">
                     <label for="other_books" class="h6 col-form-label">Other Books with Reviews</label>
-                    <textarea id="other_books" class="form-control">Other books here</textarea>
+                    <div id="other_books" class=" form-control form-control-plaintext">
+                        {% for book in books %}
+                            <p><a href="/books/{{ book.id }}">{{ book.title }}</a></p>
+                        {% endfor %}
+
+                    </div>
                 </div>
             </div>
         </div>

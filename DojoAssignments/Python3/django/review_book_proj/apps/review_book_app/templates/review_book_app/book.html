@@ -34,24 +34,57 @@
         </div>
         {#Forms#}
         <div class="row">
-            <h4>Book_Title</h4>
-            <h5>Book_Author</h5>
+            <div class="col-5">
 
-            <div class="col-6">
+                <h4>{{ book.title }}</h4>
+                <h6>Author: {{ book.author }}</h6>
+
+
                 {#Cycle through reviews to priint them using a for loop#}
 
-                <h4>Reviews</h4>
-                <h5>Rating:</h5> User_Book_Rating
-                <h6>User_alias</h6> says: User_Book_Content
-                <p>Posted on:</p> User_Book_Review_Created_at
+                <h4 class="border-bottom border-dark">Reviews</h4>
+                {% for review in set_reviews %}
+                    <p class="mb-0">Rating: {{ review.rating }}</p>
+                    <p class="mb-0"><a href="/users/{{ review.reviewer.id }}">{{ review.reviewer.alias }}</a>
+                        says: {{ review.content }}</p>
+                    <p class="mb-0 border-bottom border-dark">Posted on {{ review.created_at }}</p>
+                {% endfor %}
 
             </div>
-            <div class="col-6">
-                <form action="/add_review"
-                <label for="review_text">Add a Review:</label>
-                <textarea id="review_text">
-                    Other books here
-                </textarea>
+        <div class="col-1"></div>
+            <div class="col-3">
+                <form action="/add_review/{{ book.id }}/" method="post">
+                    {% csrf_token %}
+                    <div class="form-group form-row">
+
+                        <label for="review_text" class="col-form-label">Add a Review:</label>
+                        <textarea id="review_text" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group form-row">
+
+                        <label for="rating_group">Rating</label>
+                        <div id="rating_group" class="input-group">
+                            <select id="rank" name="rank" class="custom-select">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                            <div class="input-group-append">
+                                <label class="input-group-text" for="rank">stars</label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+
+                        <input type="submit" name="submit" class="btn btn-primary" value="Add Review">
+                    </div>
+
+
+                </form>
+
             </div>
         </div>
     </div>

@@ -11,7 +11,7 @@ urlpatterns = [
     url(r'^books/(?P<id>\d+)/$', views.book),
     url(r'^add_book/$', views.add_book),
     url(r'^reviews/$', views.reviews),
-    url(r'^add_review/$', views.add_review),
+    url(r'^add_review/(?P<id>\d+)/$', views.add_review),
     url(r'^users/(?P<id>\d+)/$', views.user),
     url(r'^logout/$', views.logout),
 

@@ -33,16 +33,31 @@
 
     </div>
     <div class="row">
-        <h1>User Alias:</h1>User_alias
-        <h2>Name:</h2> User_name
-        <h3>Email:</h3> User_email
-        <h4>Total Reviews:</h4> Count User_review
+        <div class="col-auto">
+            <h4>User Alias: {{ user.alias }}</h4>
+            <h5>Name: {{ user.name }}</h5>
+            <h5>Email: {{ user.email }}</h5>
+            <h5>Total Reviews: {{ count }} </h5>
 
-        <h3>Posted Reviews on the following books:</h3>
-        {#Cycle through and print this with for loop#}
-        <p>
-            User_Review_Book_Title
-        </p>
+            <h5>Posted Reviews on the following books:</h5>
+            {#Cycle through and print this with for loop#}
+            <ul class="list">
+
+                {% for review in reviews %}
+                    <li class="list-item">
+                        <a href="/books/{{ review.book.id }}/">
+                            {{ review.book.title }}
+
+                        </a>
+                    </li>
+
+                {% endfor %}
+
+
+            </ul>
+
+
+        </div>
     </div>
 </div>
 </body>
