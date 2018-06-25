@@ -24,6 +24,7 @@
 </head>
 <body>
     <div class="container">
+        {#Navbar#}
         <div class="row">
             <nav class="nav nav-pills navbar">
                 <a class="nav-link active" href="/">Home</a>
@@ -32,12 +33,12 @@
             </nav>
         </div>
 
-
+        {#Forms#}
         <div class="row">
             <div class="col-auto mr-auto">
                 <h4>Add a new book title and review:</h4>
 
-                <form action="/add_book" method="post">
+                <form action="/add_book/" method="post">
                     {% csrf_token %}
 
 
@@ -45,17 +46,19 @@
                         <label for="title">Book Title:</label>
                         <input type="text" class="form-control" id="title" name="title">
                     </div>
+                    <div class="form-group form-row">
 
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="select">Select</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="select">Select</label>
+                            </div>
+                            <select class="custom-select" id="select" name="select_author">
+                                <option selected>an author...</option>
+                                <option value="1"></option>
+                                <option value="2"></option>
+                                <option value="3"></option>
+                            </select>
                         </div>
-                        <select class="custom-select" id="select" name="select_author">
-                            <option selected>an author...</option>
-                            <option value="1"></option>
-                            <option value="2"></option>
-                            <option value="3"></option>
-                        </select>
                     </div>
                     <div class="form-group form-row">
                         <label for="author">Or add a new author:</label>
@@ -93,6 +96,7 @@
                 </form>
             </div>
         </div>
+
     </div>
 
 

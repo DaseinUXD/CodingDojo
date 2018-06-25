@@ -7,10 +7,12 @@ urlpatterns = [
     url(r'^register/$', views.register),
     url(r'^login/$', views.login),
     url(r'^books/$', views.books),
-    url(r'^add/$', views.add),
+    url(r'^books/add/$', views.add),
+    url(r'^books/(?P<id>\d+)/$', views.book),
     url(r'^add_book/$', views.add_book),
     url(r'^reviews/$', views.reviews),
-    url(r'^user/$', views.user),
+    url(r'^add_review/$', views.add_review),
+    url(r'^users/(?P<id>\d+)/$', views.user),
     url(r'^logout/$', views.logout),
 
 ]

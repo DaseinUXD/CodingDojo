@@ -25,18 +25,21 @@
 <body>
 
     <div class="container">
+        {#        Navbar #}
         <div class="row">
             <nav class="nav nav-pills navbar">
                 <a class="nav-link active" href="/">Home</a>
-                <a class="nav-link" href="/add">Add Book and Review</a>
+                <a class="nav-link" href="/books/add">Add Book and Review</a>
 
             </nav>
         </div>
+        {#        Forms#}
         <div class="row">
             <div class="col-5"><h4>Registration</h4>
 
-                <form action="/register" method="post">
+                <form action="/register/" method="post">
                     {% csrf_token %}
+
                     <div class="form-group form-row">
                         <label for="name" class="col-form-label">Name:</label>
                         <input type="text" id="name" name="name" class="form-control">
@@ -54,7 +57,7 @@
 
                     <div class="form-group form-row">
                         <label for="password" class="col-form-label">Password:</label>
-                        <input name="password">
+                        <input type="text" id="password" class="form-control" name="password">
                     </div>
 
                     <div class="form-group form-row">
@@ -69,8 +72,9 @@
             </div>
             <div class="col-2"></div>
             <div class="col-5"><h4>Log In</h4>
-                <form action="/login" method="post">
+                <form action="/login/" method="post">
                     {% csrf_token %}
+
                     <div class="form-group form-row">
                         <label for="email_login" class="col-form-label">Email:</label>
                         <input type="text" id="email_login" name="email_login" class="form-control">

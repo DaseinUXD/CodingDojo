@@ -24,19 +24,29 @@
 </head>
 <body>
     <div class="container">
+        {#Navbar#}
         <div class="row">
             <nav class="nav nav-pills navbar">
                 <a class="nav-link active" href="/">Home</a>
-                <a class="nav-link" href="/add">Add Book and Review</a>
+                <a class="nav-link" href="/books/add">Add Book and Review</a>
                 <a class="nav-link" href="/logout">Logout</a>
 
             </nav>
         </div>
+        {#Forms#}
+        <h4>Welcome, Alias</h4>
         <div class="row">
             <div class="col-6">
-                <h4>Welcome, UserName</h4>
+                <h6>Recent Book Reviews:</h6>
+                {#Cycle through reviews to priint them using a for loop#}
+
             </div>
-            <div class="col-6"></div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="other_books" class="h6 col-form-label">Other Books with Reviews</label>
+                    <textarea id="other_books" class="form-control">Other books here</textarea>
+                </div>
+            </div>
         </div>
     </div>
 
