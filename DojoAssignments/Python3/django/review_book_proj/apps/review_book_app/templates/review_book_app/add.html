@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../static/review_book_app/css/bootstrap.css">
+    <link rel="stylesheet" href="../../static/review_book_app/css/fontawesome-all.css">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+            integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+            integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+            crossorigin="anonymous"></script>
+    <title>Add Book and Review</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <nav class="nav nav-pills navbar">
+                <a class="nav-link active" href="/">Home</a>
+                <a class="nav-link" href="/logout">Logout</a>
+
+            </nav>
+        </div>
+
+
+        <div class="row">
+            <div class="col-auto mr-auto">
+                <h4>Add a new book title and review:</h4>
+
+                <form action="/add_book" method="post">
+                    {% csrf_token %}
+
+
+                    <div class="form-group form-row">
+                        <label for="title">Book Title:</label>
+                        <input type="text" class="form-control" id="title" name="title">
+                    </div>
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="select">Select</label>
+                        </div>
+                        <select class="custom-select" id="select" name="select_author">
+                            <option selected>an author...</option>
+                            <option value="1"></option>
+                            <option value="2"></option>
+                            <option value="3"></option>
+                        </select>
+                    </div>
+                    <div class="form-group form-row">
+                        <label for="author">Or add a new author:</label>
+                        <input type="text" class="form-control" id="author" name="author">
+                    </div>
+
+
+                    <div class="form-group form-row">
+                        <label for="review">Review:</label>
+                        <textarea class="form-control" id="review" name="review"></textarea>
+                    </div>
+                    <div class="form-group form-row">
+
+                        <label for="rating_group">Rating</label>
+                        <div id="rating_group" class="input-group">
+                            <select id="rank" name="rank" class="custom-select">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                            <div class="input-group-append">
+                                <label class="input-group-text" for="rank">stars</label>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <input type="submit" name="submit" class="btn btn-primary" value="Add Book and Review">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
