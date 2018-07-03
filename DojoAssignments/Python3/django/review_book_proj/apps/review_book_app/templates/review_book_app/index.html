@@ -29,40 +29,48 @@
         <div class="row">
             <nav class="nav nav-pills navbar">
                 <a class="nav-link active" href="/">Home</a>
-                <a class="nav-link" href="/books/add">Add Book and Review</a>
+                <a class="nav-link" href="/books/add/">Add Book and Review</a>
 
             </nav>
         </div>
         {#        Forms#}
         <div class="row">
             <div class="col-5"><h4>Registration</h4>
+                {% if messages %}
+                    <ul class="list-group">
+                        {% for message in messages %}
+                            <li class="list-group-item list-group-item-danger">{{ message }}</li>
+                        {% endfor %}
+
+                    </ul>
+                {% endif %}
 
                 <form action="/register/" method="post">
                     {% csrf_token %}
 
                     <div class="form-group form-row">
                         <label for="name" class="col-form-label">Name:</label>
-                        <input type="text" id="name" name="name" class="form-control">
+                        <input type="text" id="name" name="name" class="form-control" value="Mark Matthews">
                     </div>
 
                     <div class="form-group form-row">
                         <label for="alias" class="col-form-label">Alias:</label>
-                        <input type="text" id="alias" name="alias" class="form-control">
+                        <input type="text" id="alias" name="alias" class="form-control" value="markm">
                     </div>
 
                     <div class="form-group form-row">
                         <label for="email" class="col-form-label">Email:</label>
-                        <input type="text" id="email" name="email" class="form-control">
+                        <input type="text" id="email" name="email" class="form-control" value="m@m.com">
                     </div>
 
                     <div class="form-group form-row">
                         <label for="password" class="col-form-label">Password:</label>
-                        <input type="text" id="password" class="form-control" name="password">
+                        <input type="text" id="password" class="form-control" name="password" value="password1">
                     </div>
 
                     <div class="form-group form-row">
                         <label for="password_confirm" class="col-form-label">Confirm Password:</label>
-                        <input type="text" id="password_confirm" name="password_confirm" class="form-control">
+                        <input type="text" id="password_confirm" name="password_confirm" class="form-control" value="password1">
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btn btn-primary" name="register" value="Register">

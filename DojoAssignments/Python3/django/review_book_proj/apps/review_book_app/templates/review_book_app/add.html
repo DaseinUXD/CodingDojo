@@ -54,9 +54,12 @@
                             </div>
                             <select class="custom-select" id="select" name="select_author">
                                 <option selected>an author...</option>
-                                <option value="1"></option>
-                                <option value="2"></option>
-                                <option value="3"></option>
+
+
+                                {% for book in books %}
+                                    <option value="{{ book.author }}">{{ book.author }}</option>
+
+                                {% endfor %}
                             </select>
                         </div>
                     </div>
@@ -87,11 +90,6 @@
                         </div>
 
 
-                    </div>
-
-                    <div class="form-group">
-
-                        <input type="submit" name="submit" class="btn btn-primary" value="Add Book and Review">
                     </div>
                 </form>
             </div>

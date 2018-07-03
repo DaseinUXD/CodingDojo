@@ -44,6 +44,26 @@
 
                 <h4 class="border-bottom border-dark">Reviews</h4>
                 {% for review in set_reviews %}
+                    {% if review.rating == 5 %}
+                        <p class="mb-0">Rating: <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
+                                class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i></p>
+                    {% elif review.rating == 4 %}
+                        <p class="mb-0">Rating: <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
+                                class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i></p>
+
+                    {% elif review.rating == 3 %}
+                        <p class="mb-0">Rating: <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
+                                class="fas fa-star"></i> <i class="fas fa-star"></i></p>
+
+                    {% elif review.rating == 2 %}
+                        <p class="mb-0">Rating: <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
+                                class="fas fa-star"></i> <i class="fas fa-star"></i></p>
+
+                    {% elif review.rating == 1 %}
+                        <p class="mb-0">Rating: <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
+                                class="fas fa-star"></i></p>
+
+                    {% endif %}
                     <p class="mb-0">Rating: {{ review.rating }}</p>
                     <p class="mb-0"><a href="/users/{{ review.reviewer.id }}">{{ review.reviewer.alias }}</a>
                         says: {{ review.content }}</p>
@@ -51,7 +71,7 @@
                 {% endfor %}
 
             </div>
-        <div class="col-1"></div>
+            <div class="col-1"></div>
             <div class="col-3">
                 <form action="/add_review/{{ book.id }}/" method="post">
                     {% csrf_token %}

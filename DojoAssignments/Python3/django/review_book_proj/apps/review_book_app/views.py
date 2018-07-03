@@ -17,7 +17,22 @@ def index(request):
 
 # Register user
 def register(request):
-    print('made it to register')
+    print('im in the register function')
+    print(request.method)
+    if request.method == 'POST':
+        name = request.POST['name']
+        alias = request.POST['alias']
+        email = request.POST['email']
+        password = request.POST['password']
+
+        print(name)
+        errors = User.objects.register(request.POST)
+        if len(errors):
+            for key, value in errors.items():
+                messages.error(request, value)
+        else:
+            User.objects.create(name=name, alias=alias, email=email, password=password)
+
     return redirect('/')
 
 # Process login request
@@ -80,7 +95,12 @@ def book(request, id):
 
 # Display add a book form.
 def add(request):
-    context = {}
+    all_books = Book.objects.all()
+
+
+    context = {
+        'books':all_books,
+    }
     return render(request, 'review_book_app/add.html', context)
 
 

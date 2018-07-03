@@ -4,6 +4,8 @@ from . import views
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^index$', views.index, name='index'),
-    url(r'^destroy$', views.destroy, name='destroy'),
+    url(r'^add$', views.add, name='add'),
+    url(r'^delete$', views.delete, name='delete'),
+    url(r'^courses/destroy/(?P<id>\d+)$', views.destroy, name='destroy'),
 
 ]
