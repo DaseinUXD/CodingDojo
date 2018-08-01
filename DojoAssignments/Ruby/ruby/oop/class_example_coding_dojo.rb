@@ -1,4 +1,4 @@
-class CodingDojo2
+class CodingDojo
   @@no_of_branches = 0
   def initialize(id, name, address)
     @branch_id = id
@@ -15,10 +15,9 @@ class CodingDojo2
     puts "Branch Name: #{@branch_name}"
     puts "Branch Address: #{@branch_address}"
   end
-  def self.num_of_branches
-    @@no_of_branches
-  end
 end
-seattle = CodingDojo2.new(1, "Seattle", "123 Seattle Avenue")
-san_jose = CodingDojo2.new(2, "San Jose", "456 San Jose Boulevard")
-burbank = CodingDojo2.new(3, "Burbank", "789 Burbank Street")
+# now using above class to create objects
+branch = CodingDojo.new(253, "SF CodingDojo", "Sunnyvale CA")
+branch.display_all
+branch2 = CodingDojo.new(155, "Boston CodingDojo", "Boston MA")
+branch2.display_all
