@@ -1,0 +1,2 @@
+class Mongoose < ApplicationRecord
+end
