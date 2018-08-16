@@ -1,0 +1,95 @@
+<!--header-->
+<header class="container">
+  <!--Fixed navbar-->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#"><%= image_tag asset_path("brain_shapes_32.png", :alt => "logo") %></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="dojo/new">New Dojo<span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<!--main_tag .container-->
+<main role="main" class="container" style="padding-top: 60px">
+  <!--top row-->
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+    </div>
+    <div class="col-2"></div>
+  </div>
+  <!--middle row-->
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <!--heading-->
+      <h1 class="mt-5">Listing <%= @dojos_all.count %> Dojos</h1>
+      <!--table-->
+      <table class="table table-bordered table-light table-striped table-hover table-bordered rounded">
+        <thead class="thead-dark">
+        <tr class="text-center">
+          <th>Coding Dojo Branch</th>
+          <th>Street</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody class="">
+        <!--each loop to pull information from database-->
+        <% @dojos_all.each do |dojo| %>
+          <tr class="text-left">
+            <td><%= dojo.branch %></td>
+            <td><%= dojo.street %></td>
+            <td><%= dojo.city %></td>
+            <td><%= dojo.state %></td>
+            <!--actions-->
+            <td>
+              <!--EDIT button ACTION and METHOD-->
+              <form action="/dojo/<%= dojo.id %>/edit" method="get">
+                <!--SHOW button as an ANCHOR link (i.e., "get")-->
+                <a class="btn btn-outline-info btn-sm" href="/dojo/<%= dojo.id %>/students/">Show</a>
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                <input type="hidden" name="_method" value="patch">
+                <input type="submit" class="btn btn-outline-warning btn-sm" value="Edit">
+                <a class="btn btn-outline-danger btn-sm" href="/dojo/<%= dojo.id %>/" data-method="delete">Destroy</a>
+              </form>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-2"></div>
+  </div>
+  <!--bottom row-->
+  <div class="row">
+    <div class="col-12"></div>
+  </div>
+</main>
+<!--footer-->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <span class="text-muted">&copy; 2018 Mark W. Matthews, PhD</span>
+      </div>
+      <!--social media icons-->
+      <div class="col-6">
+        <%= image_tag asset_path("17_Social_media_logos_24px_05.png", :alt => "logo") %>
+        <%= image_tag asset_path("17_Social_media_logos_24px_09.png", :alt => "logo") %>
+        <%= image_tag asset_path("17_Social_media_logos_24px_13.png", :alt => "logo") %>
+        <%= image_tag asset_path("17_Social_media_logos_24px_17.png", :alt => "logo") %>
+        <%= image_tag asset_path("17_Social_media_logos_24px_37.png", :alt => "logo") %>
+        <%= image_tag asset_path("17_Social_media_logos_24px_64.png", :alt => "logo") %>
+        <%= image_tag asset_path("17_Social_media_logos_24px_224.png", :alt => "logo") %>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row"></div>
+  <div class="row">
+    <div class="col-2 bg-success">
+      <p class="text-white"><%=@submit_count_0 %> <%=@submit_count_many %></p>
+    </div>
+    <div class="col-8">
+      <form class="form">
+        <fieldset>
+          <legend>Submitted Information</legend>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Name</span>
+            </div>
+            <input disabled type="text" aria-label="Name" class="form-control form-control-plaintext bg-white text-info h6 border" name="name" value="<%= @result_last.name %>">
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Location</span>
+            </div>
+            <input  disabled aria-label="Location" class="form-control form-control-plaintext bg-white text-info h6 border" name="location" value="<%= @result_last.location %>">
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Language</span>
+            </div>
+            <input disabled aria-label="Language" class="form-control form-control-plaintext bg-white text-info h6 border" name="language" value="<%= @result_last.language %>">
+          </div>
+
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Comments</span>
+            </div>
+            <textarea disabled class="form-control form-control-plaintext bg-white text-info h6 border" aria-label="Comments" name="comments"><%= @result_last.comments %></textarea>
+
+          </div>
+          <div class="form-group">
+            <a href="/" class="btn btn-outline-primary m-4">Go Back</a>
+          </div>
+          <div class="form-group">
+            <a href="/reset" class="btn btn-outline-danger m-4">Reset</a>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="col-2"></div>
+  </div>
+  <div class="row"></div>
+</div>

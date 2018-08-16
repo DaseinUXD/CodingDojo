@@ -1,0 +1,139 @@
+<!--header-->
+<header class="container">
+  <!--Fixed navbar-->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#"><%= image_tag asset_path("brain_shapes_32.png", :alt => "logo") %></a>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="../dojo">Home<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    </div>
+  </nav>
+</header>
+
+
+<!--main -->
+<main role="main" class="container" style="padding-top: 60px">
+  <!--  top row-->
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <% if @error_count %>
+        <% for i in 0..@error_count do %>
+          <div class="text-danger">
+            <%= @error_messages[i] %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="col-2">
+      <%#= @error_hash.values_at('branch') %>
+    </div>
+  </div>
+  <!--  middle row-->
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <!--      form-->
+      <form action="/dojo" method="post" class="form mt-5">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <fieldset>
+          <legend class="h1">New Dojo</legend>
+          <!--          branch-->
+          <div class="form-group form-row">
+            <label for="branch" class="col-2 col-form-label">Branch:</label>
+            <div class="col-auto">
+              <input id="branch" type="text" name="branch" class="form-control">
+            </div>
+          </div>
+          <!--          street-->
+          <div class="form-group form-row">
+            <label for="street" class="col-2 col-form-label">Street:</label>
+            <div class="col-auto">
+              <input id="street" type="text" name="street" class="form-control">
+            </div>
+          </div>
+          <!--          city-->
+          <div class="form-group form-row">
+            <label for="city" class="col-2 col-form-label">City:</label>
+            <div class="col-auto">
+              <input id="city" type="text" name="city" class="form-control">
+            </div>
+          </div>
+          <!--          state-->
+          <div class="form-group form-row">
+            <label for="state" class="col-2 col-form-label">State:</label>
+            <div class="col-auto">
+              <input id="state" type="text" name="state" class="form-control">
+            </div>
+          </div>
+          <!--          submit button-->
+          <div class="form-group form-row">
+            <div class="col-2"></div>
+            <div class="col-auto">
+              <input id="submit" type="submit" name="submit" class="btn btn-primary form-control">
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="col-2"></div>
+  </div>
+  <!--  bottom row-->
+  <div class="row">
+<!--    <div class="col-12">-->
+      <%# form_tag do %>
+        <%#= form_for :dojo, :url => { :action => "create" } do |f| %>
+          <%#= f.text_field :branch %>
+          <%#= f.text_field :street %>
+          <%#= f.text_field :city %>
+<!--          <div class="form-group form-row">-->
+<!--            <label for="state" class="col-2 col-form-label">State:</label>-->
+<!--            <div class="col-auto">-->
+<!--              <input id="state" type="text" name="state" class="form-control">-->
+<!--            </div>-->
+<!--          </div>-->
+
+          <%#= submit_tag 'Create' %>
+        <%# end %>
+      <%# end %>
+
+      <%#= form_for :dojo, :url => { :action => "create" } do |f| %>
+        <%#= f.text_field :branch, :class => "form-control" %>
+        <%#= f.text_field :street %>
+        <%#= f.text_field :city %>
+<!--        <div class="form-group form-row">-->
+<!--          <label for="state" class="col-2 col-form-label">State:</label>-->
+<!--          <div class="col-auto">-->
+<!--            <input id="state" type="text" name="state" class="form-control">-->
+<!--          </div>-->
+<!--        </div>-->
+
+          <%#= submit_tag 'Create' %>
+      <%# end %>
+<!--    </div>-->
+  </div>
+</main>
+
+<!--  footer-->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <span class="text-muted">&copy; 2018 Mark W. Matthews, PhD</span>
+      </div>
+      <!--      social media icons-->
+      <div class="col-6">
+        <%= image_tag asset_path("17_Social_media_logos_24px_05.png", :alt => "logo") %>
+        <%= image_tag asset_path("17_Social_media_logos_24px_09.png", :alt => "logo") %>
+        <%= image_tag asset_path("17_Social_media_logos_24px_13.png", :alt => "logo") %>
+        <%= image_tag asset_path("17_Social_media_logos_24px_17.png", :alt => "logo") %>
+        <%= image_tag asset_path("17_Social_media_logos_24px_37.png", :alt => "logo") %>
+        <%= image_tag asset_path("17_Social_media_logos_24px_64.png", :alt => "logo") %>
+        <%= image_tag asset_path("17_Social_media_logos_24px_224.png", :alt => "logo") %>
+      </div>
+    </div>
+
+  </div>
+</footer>

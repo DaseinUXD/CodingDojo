@@ -1,2 +1,80 @@
-<h1>Rpg#casino</h1>
-<p>Find me in app/views/rpg/casino.html.erb</p>
+<div class="container m-5">
+  <!--  Top Row-->
+  <div class="row">
+    <div class="col-6">
+      <div class="form-group form-row m-2">
+        <label for="your_gold" class="col-3 col-form-label">Your Gold:</label>
+        <div class="col-4 form-row">
+          <input value="<%= session[:gold_count] %>" disabled id="your_gold" type="text" class="form-control form-control-plaintext bg-white border m-0">
+        </div>
+      </div>
+    </div>
+    <div class="col-6"></div>
+  </div>
+  <!--  Middle Row-->
+  <div class="row">
+    <!--    Farm-->
+    <div class="col-3">
+      <form action="farm" method="get" class="border rounded">
+        <fieldset>
+          <legend class="text-center">Farm</legend>
+          <span class="text-center form-text text-muted mb-2">(earn 10-20 gold)</span>
+          <div class="text-center">
+            <input type="submit" class="btn btn-success mb-2" value="Find Gold!">
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <!--    Cave-->
+    <div class="col-3">
+      <form action="cave" method="get" class="border rounded">
+        <fieldset>
+          <legend class="text-center">Cave</legend>
+          <span class="text-center form-text text-muted mb-2">(earn 5-10 gold)</span>
+          <div class="text-center">
+            <input type="submit" class="btn btn-success mb-2" value="Find Gold!">
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <!--    House-->
+    <div class="col-3">
+      <form action="house" method="get" class="border rounded">
+        <fieldset>
+          <legend class="text-center">House</legend>
+          <span class="text-center form-text text-muted mb-2">(earn 2-5 gold)</span>
+          <div class="text-center">
+            <input type="submit" class="btn btn-success mb-2" value="Find Gold!">
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <!--    Casino-->
+    <div class="col-3">
+      <form action="casino" method="get" class="border rounded">
+        <fieldset>
+          <legend class="text-center">Casino</legend>
+          <span class="text-center form-text text-muted mb-2">(earn/loose 0-50 gold)</span>
+          <div class="text-center">
+            <input type="submit" class="btn btn-success mb-2" value="Find Gold!">
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+  <!--  Bottom Row-->
+  <div class="row">
+    <div class="col-12">
+      <form>
+        <fieldset class="form-text text-muted">Activities:</fieldset>
+        <div class="border rounded scrollDiv">
+          <% session[:activity].each do |a| %>
+            <div disabled class="<%= a[0] %> ml-4 mb-1 " contenteditable="false">
+              <%= a[1] %>
+            </div>
+          <% end %>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

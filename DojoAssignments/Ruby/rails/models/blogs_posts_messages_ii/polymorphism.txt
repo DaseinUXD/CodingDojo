@@ -1,0 +1,145 @@
+C:\Ruby24-x64\bin\ruby.exe D:/CodingDojo/DojoAssignments/Ruby/rails/models/blogs_posts_messages_ii/bin/rails console
+Loading development environment (Rails 5.2.0)
+irb(main):001:0>>> Comment.new
+ Comment.new
+=> #<Comment id: nil, usable_type: nil, usable_id: nil, created_at: nil, updated
+_at: nil>
+irb(main):002:0>>> Comment.new
+ Comment.new
+=> #<Comment id: nil, usable_type: nil, usable_id: nil, created_at: nil, updated
+_at: nil>
+irb(main):003:0>>> Hirb.enable
+ Hirb.enable
+=> true
+irb(main):004:0>>> Comment.new
+ Comment.new
++----+-------------+-----------+------------+------------+
+| id | usable_type | usable_id | created_at | updated_at |
++----+-------------+-----------+------------+------------+
+|    |             |           |            |            |
++----+-------------+-----------+------------+------------+
+1 row in set
+irb(main):005:0>>> Comment.create(usable_id: 1, usable_type: "User")
+ Comment.create(usable_id: 1,   (0.0ms)  begin transaction
+ usable_type: "User")
+  User Load (0.0ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT
+ ?  [["id", 1], ["LIMIT", 1]]
+  Comment Create (184.3ms)  INSERT INTO "comments" ("usable_type", "usable_id",
+"created_at", "updated_at") VALUES (?, ?, ?, ?)  [["usable_type", "User"], ["usa
+ble_id", 1], ["created_at", "2018-08-03 14:20:49.854414"], ["updated_at", "2018-
+08-03 14:20:49.854414"]]
+   (116.9ms)  commit transaction
++----+-------------+-----------+-----------------------+-----------------------+
+
+| id | usable_type | usable_id | created_at            | updated_at            |
+
++----+-------------+-----------+-----------------------+-----------------------+
+
+| 1  | User        | 1         | 2018-08-03 14:20:4... | 2018-08-03 14:20:4... |
+
++----+-------------+-----------+-----------------------+-----------------------+
+
+1 row in set
+irb(main):006:0>>> Comment.create(usable_id: 1, usable_type: "Blog")
+ Comment.create(usable_id: 1, usable_type: "Blog   (0.0ms)  begin transaction
+")
+  Blog Load (0.0ms)  SELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = ? LIMIT
+ ?  [["id", 1], ["LIMIT", 1]]
+  Comment Create (1.0ms)  INSERT INTO "comments" ("usable_type", "usable_id", "c
+reated_at", "updated_at") VALUES (?, ?, ?, ?)  [["usable_type", "Blog"], ["usabl
+e_id", 1], ["created_at", "2018-08-03 14:21:04.458440"], ["updated_at", "2018-08
+-03 14:21:04.458440"]]
+   (118.8ms)  commit transaction
++----+-------------+-----------+-----------------------+-----------------------+
+
+| id | usable_type | usable_id | created_at            | updated_at            |
+
++----+-------------+-----------+-----------------------+-----------------------+
+
+| 2  | Blog        | 1         | 2018-08-03 14:21:0... | 2018-08-03 14:21:0... |
+
++----+-------------+-----------+-----------------------+-----------------------+
+
+1 row in set
+irb(main):007:0>>> Comment.create(usable_id: 1, usable_type: "Post")
+ Comment.create(usable_id: 1, usable_type:   (0.0ms)  begin transaction
+ "Post")
+  Post Load (0.0ms)  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT
+ ?  [["id", 1], ["LIMIT", 1]]
+  Comment Create (1.0ms)  INSERT INTO "comments" ("usable_type", "usable_id", "c
+reated_at", "updated_at") VALUES (?, ?, ?, ?)  [["usable_type", "Post"], ["usabl
+e_id", 1], ["created_at", "2018-08-03 14:21:10.336707"], ["updated_at", "2018-08
+-03 14:21:10.336707"]]
+   (124.4ms)  commit transaction
++----+-------------+-----------+-----------------------+-----------------------+
+
+| id | usable_type | usable_id | created_at            | updated_at            |
+
++----+-------------+-----------+-----------------------+-----------------------+
+
+| 3  | Post        | 1         | 2018-08-03 14:21:1... | 2018-08-03 14:21:1... |
+
++----+-------------+-----------+-----------------------+-----------------------+
+
+1 row in set
+irb(main):008:0>>> Comment.create(usable_id: 1, usable_type: "Message")
+ Comment.create(usable_id: 1, u   (0.0ms)  begin transaction
+  Message Load (0.0ms)  SELECT  "messages".* FROM "messages" WHERE "messages"."i
+d" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]sable_type: "Message")
+
+  Comment Create (1.0ms)  INSERT INTO "comments" ("usable_type", "usable_id", "c
+reated_at", "updated_at") VALUES (?, ?, ?, ?)  [["usable_type", "Message"], ["us
+able_id", 1], ["created_at", "2018-08-03 14:21:16.236674"], ["updated_at", "2018
+-08-03 14:21:16.236674"]]
+   (93.7ms)  commit transaction
++----+-------------+-----------+-----------------------+-----------------------+
+
+| id | usable_type | usable_id | created_at            | updated_at            |
+
++----+-------------+-----------+-----------------------+-----------------------+
+
+| 4  | Message     | 1         | 2018-08-03 14:21:1... | 2018-08-03 14:21:1... |
+
++----+-------------+-----------+-----------------------+-----------------------+
+
+1 row in set
+irb(main):009:0>>> Comment.create(usable: User.second)
+ Comment.create(usable: User.second)
+  User Load (0.0ms)  SELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LI
+MIT ? OFFSET ?  [["LIMIT", 1], ["OFFSET", 1]]
+   (0.0ms)  begin transaction
+  Comment Create (1.9ms)  INSERT INTO "comments" ("usable_type", "usable_id", "c
+reated_at", "updated_at") VALUES (?, ?, ?, ?)  [["usable_type", "User"], ["usabl
+e_id", 2], ["created_at", "2018-08-03 14:21:53.330618"], ["updated_at", "2018-08
+-03 14:21:53.330618"]]
+   (343.8ms)  commit transaction
++----+-------------+-----------+-----------------------+-----------------------+
+
+| id | usable_type | usable_id | created_at            | updated_at            |
+
++----+-------------+-----------+-----------------------+-----------------------+
+
+| 5  | User        | 2         | 2018-08-03 14:21:5... | 2018-08-03 14:21:5... |
+
++----+-------------+-----------+-----------------------+-----------------------+
+
+1 row in set
+irb(main):010:0>>> comments1 = User.first.comments
+  User Load (0.0ms)  SELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LI
+MIT ?  [["LIMIT", 1]]
+ comments1 = User.first.comments
+  Comment Load (0.9ms)  SELECT "comments".* FROM "comments" WHERE "comments"."us
+able_id" = ? AND "comments"."usable_type" = ?  [["usable_id", 1], ["usable_type"
++----+-------------+-----------+-----------------------+-----------------------+
+, "User"]]
+
+| id | usable_type | usable_id | created_at            | updated_at            |
+
++----+-------------+-----------+-----------------------+-----------------------+
+
+| 1  | User        | 1         | 2018-08-03 14:20:4... | 2018-08-03 14:20:4... |
+
++----+-------------+-----------+-----------------------+-----------------------+
+
+1 row in set
+irb(main):011:0>

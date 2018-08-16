@@ -1,0 +1,128 @@
+<!--header-->
+<header>
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#"><%= image_tag asset_path("brain_shapes_32.png", :alt => "logo") %></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="/dojo/<%#=@dojo.id %>">Show</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link disabled" href="#">Disabled</a>-->
+<!--        </li>-->
+      </ul>
+      <form class="form-inline mt-2 mt-md-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+</header>
+
+
+<!--main_tag .container -->
+<main role="main" class="container" style="padding-top: 60px">
+  <!--  top row-->
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <%# if @error_count %>
+        <%# for i in 0..@error_count do %>
+          <div class="text-danger">
+            <%#= @error_messages[i] %>
+            <%#= @error_hash.values_at('street') %>
+          </div>
+        <%#end %>
+
+      <%#end %>
+    </div>
+    <div class="col-2">
+      <%#= @error_hash.values_at('branch') %>
+    </div>
+  </div>
+  <!--  middle row-->
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <!--      form-->
+      <form action="/dojo/<%@dojo.id %>/edit" method="get" class="form mt-5">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<!--        <input type="hidden" name="_method" value="patch">-->
+        <fieldset>
+          <legend class="h1">Edit <%=@dojo.city %></legend>
+          <!--          branch-->
+          <div class="form-group form-row">
+            <label for="branch" class="col-2 col-form-label">Branch:</label>
+            <div class="col-auto">
+              <input id="branch" type="text" name="branch" class="form-control" value="<%=@dojo.branch %>">
+            </div>
+
+          </div>
+          <!--          street-->
+          <div class="form-group form-row">
+            <label for="street" class="col-2 col-form-label">Street:</label>
+            <div class="col-auto">
+              <input id="street" type="text" name="street" class="form-control"  value="<%=@dojo.street %>">
+            </div>
+          </div>
+          <!--          city-->
+          <div class="form-group form-row">
+            <label for="city" class="col-2 col-form-label">City:</label>
+            <div class="col-auto">
+              <input id="city" type="text" name="city" class="form-control"  value="<%=@dojo.city %>">
+            </div>
+          </div>
+          <!--          state-->
+          <div class="form-group form-row">
+            <label for="state" class="col-2 col-form-label">State:</label>
+            <div class="col-auto">
+              <input id="state" type="text" name="state" class="form-control"  value="<%=@dojo.state %>">
+            </div>
+          </div>
+          <!--          submit button-->
+          <div class="form-group form-row">
+            <div class="col-2"></div>
+            <div class="col-auto">
+              <input id="submit" type="submit" name="submit" class="btn btn-primary form-control" value="Update">
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="col-2"></div>
+  </div>
+  <!--  bottom row-->
+  <div class="row">
+    <div class="col-12"></div>
+  </div>
+</main>
+<!--  footer-->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <span class="text-muted">&copy; 2018 Mark W. Matthews, PhD</span>
+      </div>
+      <!--      social media icons-->
+      <div class="col-6">
+        <%= image_tag asset_path("17_Social_media_logos_24px_05.png", :alt => "logo") %>
+        <%= image_tag asset_path("17_Social_media_logos_24px_09.png", :alt => "logo") %>
+        <%= image_tag asset_path("17_Social_media_logos_24px_13.png", :alt => "logo") %>
+        <%= image_tag asset_path("17_Social_media_logos_24px_17.png", :alt => "logo") %>
+        <%= image_tag asset_path("17_Social_media_logos_24px_37.png", :alt => "logo") %>
+        <%= image_tag asset_path("17_Social_media_logos_24px_64.png", :alt => "logo") %>
+        <%= image_tag asset_path("17_Social_media_logos_24px_224.png", :alt => "logo") %>
+      </div>
+    </div>
+
+  </div>
+
+
+</footer>

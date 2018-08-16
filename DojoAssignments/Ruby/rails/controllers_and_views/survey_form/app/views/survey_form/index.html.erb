@@ -1,2 +1,63 @@
-<h1>SurveyForm#result</h1>
-<p>Find me in app/views/survey_form/result.html.erb</p>
+<div class="container">
+  <div class="row"></div>
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <form action="result" method="post" class="form">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <fieldset>
+          <legend>Survey Form</legend>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Name</span>
+            </div>
+            <input type="text" aria-label="First name" class="form-control" name="name">
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Location</span>
+            </div>
+            <select aria-label="Location" class="form-control" name="location">
+              <option selected>Choose...</option>
+              <option>Mountain View</option>
+              <option>Seattle</option>
+              <option>Dallas</option>
+              <option>New York</option>
+              <option>Tulsa</option>
+            </select>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Language</span>
+            </div>
+            <select aria-label="Language" class="form-control" name="language">
+              <option selected>Choose...</option>
+              <option>JavaScript</option>
+              <option>Python</option>
+              <option>Ruby</option>
+              <option>php</option>
+              <option>C#</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Comments</span>
+            </div>
+            <textarea class="form-control" aria-label="Comments" name="comments"></textarea>
+
+          </div>
+          <small class="for-text text-muted">Comments are optional</small>
+          <div class="form-group">
+
+            <input type="submit" class="btn btn-outline-success m-4">
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="col-2"></div>
+  </div>
+  <div class="row"></div>
+</div>
