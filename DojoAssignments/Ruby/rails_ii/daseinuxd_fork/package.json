@@ -1,0 +1,9 @@
+{
+  "name": "daseinuxd_fork",
+  "private": true,
+  "dependencies": {
+    "chromedriver": "^2.41.0",
+    "postgresql": "0.0.1",
+    "redis": "^2.8.0"
+  }
+}

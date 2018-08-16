@@ -1,0 +1,12 @@
+<%= bootstrap_form_for(@user) do |f| %>
+
+  <%= f.alert_message "Please review the problems below:" %>
+
+  <%= f.text_field :first_name %>
+  <%= f.text_field :last_name %>
+  <%= f.text_field :email %>
+
+  <%= f.primary %>
+  <%= link_to "Back", users_path, class: "btn btn-link" %>
+
+<% end %>
