@@ -1,0 +1,23 @@
+{
+  "name": "weather-api",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "mongod": "d:/mongodb/server/4.0/bin/mongod",
+    "mongo": "d:/mongodb/server/4.0/bin/mongo",
+    "mon": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@angular/animations": "^6.1.8",
+    "@angular/cdk": "^6.4.7",
+    "@angular/material": "^6.4.7",
+    "@stackblitz/sdk": "^1.2.0",
+    "body-parser": "^1.18.3",
+    "express": "~4.16.0",
+    "express-session": "^1.15.6",
+    "fs": "0.0.1-security",
+    "moment": "^2.22.2",
+    "mongoose": "^5.2.5"
+  }
+}
